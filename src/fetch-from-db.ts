@@ -41,7 +41,7 @@ function formatForumThreadWithInnerText(threadData: ThreadData): FormattedThread
     // const timestamp = new Date(post.reply_time * 1000); // Convert Unix timestamp to Date
     // const formattedTimestamp = format(timestamp, 'yyyy-MM-dd HH:mm'); // Format timestamp
     const postInnerText = getInnerTextFromHtml(post.msg);
-    if (postInnerText) {
+    if (postInnerText && postInnerText !== '此回覆已被刪除' && post.user.nickname !== '🗿 用戶已刪除帳號') {
       currentPostChunk += `#${post.msg_num},〔${post.user.nickname}〕\n${postInnerText}\n\n`;
     }
 
