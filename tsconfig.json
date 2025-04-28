@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "esNext",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*.ts" // Include all .ts files in the src directory and its subdirectories
+  ],
+  "exclude": [
+    "node_modules" // Exclude the node_modules directory
+  ]
+}

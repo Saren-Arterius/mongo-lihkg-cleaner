@@ -1,0 +1,26 @@
+{
+  "name": "mongo-lihkg-cleaner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "fetch": "npx ts-node src/fetch-from-db.ts",
+    "analyze": "npx ts-node src/llm-analyze.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.9.0",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.5.0",
+    "lowdb": "^7.0.1",
+    "mongodb": "^6.16.0",
+    "openai": "^4.96.0"
+  }
+}
