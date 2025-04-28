@@ -5,6 +5,7 @@ export interface FormattedThreadOutput {
     author: string,
     create_time: string,
     last_reply_time: string,
+    posts: number,
     formatted_posts: string[];
 }
 

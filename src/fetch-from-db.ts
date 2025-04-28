@@ -37,12 +37,14 @@ function formatForumThreadWithInnerText(threadData: ThreadData): FormattedThread
 
   // Format posts and split into chunks
   let currentPostChunk = '';
+  let posts = 0;
   threadData.item_data.forEach((post, index) => {
     // const timestamp = new Date(post.reply_time * 1000); // Convert Unix timestamp to Date
     // const formattedTimestamp = format(timestamp, 'yyyy-MM-dd HH:mm'); // Format timestamp
     const postInnerText = getInnerTextFromHtml(post.msg);
     if (postInnerText && postInnerText !== '此回覆已被刪除' && post.user.nickname !== '🗿 用戶已刪除帳號') {
       currentPostChunk += `#${post.msg_num},〔${post.user.nickname}〕\n${postInnerText}\n\n`;
+      posts++;
     }
 
     // If 101 posts have been processed or it's the last post, add the chunk to the array
@@ -63,6 +65,7 @@ function formatForumThreadWithInnerText(threadData: ThreadData): FormattedThread
     author: `〔${threadData.item_data[0].user.nickname}〕`,
     create_time: formattedCreateTimestamp,
     last_reply_time: formattedLastReplyTimestamp,
+    posts,
     formatted_posts: formattedPosts,
   };
 }
